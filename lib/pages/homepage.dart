@@ -1,13 +1,11 @@
 // homepage.dart
-import 'package:appointmentms/pages/lectureSignUp.dart';
-import 'package:appointmentms/pages/studentSignUp.dart';
+import 'package:appointmentms/pages/Lecturer_login.dart';
+import 'package:appointmentms/pages/studentLogin.dart';
 import 'package:appointmentms/widgets/ButtonText.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
 import 'package:flutter/material.dart';
 import 'package:appointmentms/widgets/app_largetext.dart';
 import 'package:appointmentms/widgets/loginbutton.dart';
-import 'package:appointmentms/widgets/signup_button.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -42,12 +40,10 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 100.0),
                     LoginButton(),
-                    SizedBox(width: 16.0),
-                    Buttons2(
-                      text: "SIGN UP",
-                      onPressed: () => _showMenu(context),
-                    ),
+                    
+                    
                   ],
                 ),
               ),
@@ -67,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation2(),
+      bottomNavigationBar:  BottomNavigation2(),
     );
   }
 
@@ -96,14 +92,14 @@ class _HomePageState extends State<HomePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) =>  LecturerSignUp(), 
+          builder: (context) =>  LectureLogin(), 
         ),
       );
     } else if (result == 'Student') {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => StudentSignUp(), 
+          builder: (context) => StudentLogin(), 
         ),
       );
     }

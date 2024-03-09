@@ -14,7 +14,7 @@ class _BottomNavigation2State extends State<BottomNavigation2> {
  
   int _currentIndex = 0;
   
- final List<Widget> tabs = [
+  List tabs = [
     HomePage(),
     StudentSignUp(),
    ContactUs(),

@@ -1,8 +1,10 @@
-import 'package:appointmentms/widgets/app_largetext.dart';
+import 'package:appointmentms/pages/StudentpasswordReset1.dart';
+import 'package:appointmentms/pages/studentSignUp.dart';
 import 'package:appointmentms/widgets/appbar2.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
 import 'package:appointmentms/widgets/buttons.dart';
+import 'package:appointmentms/widgets/miniText.dart';
 import 'package:appointmentms/widgets/texboxLec.dart';
 import 'package:flutter/material.dart';
 
@@ -29,23 +31,58 @@ class _StudentLoginState extends State<StudentLogin> {
             TextBox(labelText: "Password", width: 390, height: 40),
             SizedBox(height: 50.0),
             Buttons(text: "LOGIN", onPressed: () {  },),
-            SizedBox(height: 35.0),
-            AppLargeText(text: "Forgot Password?"),
-            SizedBox(height: 10.0),
-            TextButton(
-            onPressed: () {
-              // Handle login link press
-            },
-            child: const Text(
-              'Resend',
-              style: TextStyle(
-                color:Color(0xFF500512), // Set the link text color
-                decoration: TextDecoration.underline, 
-                fontSize: 22,
-                fontWeight: FontWeight.bold// Add underline for link effect
-              ),
-            ),
-          ),
+            
+            Row(
+                children: [
+                  SizedBox(width: 90.0),
+                  BottomText2(text: "Forgot password ?"),
+                  TextButton(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StudentpasswordReset1(),
+                      ),
+                    ),
+                    child: const Text(
+                      'RESET',
+                      style: TextStyle(
+                        color: Color(0xFF500512),
+                        decoration: TextDecoration.underline,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+
+             ),
+            
+          SizedBox(height: 70.0),
+             Row(
+                children: [
+                  SizedBox(width: 67.0),
+                  BottomText2(text: "Don't have an account?"),
+                  TextButton(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StudentSignUp(),
+                      ),
+                    ),
+                    child: const Text(
+                      'SIGN UP',
+                      style: TextStyle(
+                        color: Color(0xFF500512),
+                        decoration: TextDecoration.underline,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+
+             ),
+            
         
           ],
         ),

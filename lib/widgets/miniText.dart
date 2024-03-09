@@ -17,7 +17,7 @@ class BottomText2 extends StatelessWidget {
       style: TextStyle(
         
         color: Color(0xFF500512),
-        fontSize: 10,
+        fontSize: 18,
         fontWeight: FontWeight.bold,
         
       ),

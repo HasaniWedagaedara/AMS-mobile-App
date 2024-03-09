@@ -1,16 +1,18 @@
 import 'package:appointmentms/pages/Lecturer_login.dart';
 import 'package:appointmentms/pages/studentLogin.dart';
-import 'package:appointmentms/widgets/app_largetext.dart';
+import 'package:appointmentms/widgets/ButtonText.dart';
 import 'package:flutter/material.dart';
 
 class LoginButton extends StatefulWidget {
   const LoginButton({Key? key});
+  
 
   @override
   State<LoginButton> createState() => _LoginButtonState();
 }
 
 class _LoginButtonState extends State<LoginButton> {
+  
   String? _selectedRole; // To store the selected role
 
   @override
@@ -37,49 +39,40 @@ class _LoginButtonState extends State<LoginButton> {
   }
 
   void _showMenu(BuildContext context) async {
-    final result = await showDialog<String>(
+    final result = await showMenu(
       context: context,
-      builder: (BuildContext context) {
-        return SimpleDialog(
-          
-          children: [
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'Lecturer');
-              },
-              child: Center(child: AppLargeText(text: "LECTURE")),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'Student');
-              },
-              child: Center(child: AppLargeText(text: "STUDENT")),
-            ),
-          ],
-        );
-      },
+      position: const RelativeRect.fromLTRB(10, 100, 0, 0), // Adjust the position as needed
+      items: [
+        PopupMenuItem(
+          value: 'Lecturer',
+          child:  AppLargeText3(text: "STAFF"), // You can customize the appearance here
+        ),
+        PopupMenuItem(
+          value: 'Student',
+          child: AppLargeText3(text: "STUDENT"), // You can customize the appearance here
+        ),
+      ],
     );
-
     if (result != null) {
     setState(() {
       _selectedRole = result;
     });
 
-    // Handle the selected value (result) here
-    
-
-    // Navigate based on the selected role
-    if (_selectedRole == 'STAFF') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LectureLogin()),
-      );
-    } else if (_selectedRole == 'Student') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const StudentLogin()),
-      );
-    }
+ 
+  if (result == 'Lecturer') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) =>  LectureLogin(), 
+      ),
+    );
+  } else if (result == 'Student') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => StudentLogin(), 
+      ),
+    );
   }
   }
-}
+  }}
