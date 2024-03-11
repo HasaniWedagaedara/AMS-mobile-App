@@ -1,7 +1,7 @@
+import 'package:appointmentms/pages/calenderpage.dart';
 import 'package:flutter/material.dart';
 import 'package:appointmentms/pages/contactpage.dart';
 import 'package:appointmentms/pages/homepage.dart';
-import 'package:appointmentms/pages/studentSignUp.dart';
 
 class BottomNavigation2 extends StatefulWidget {
   const BottomNavigation2({Key? key}) : super(key: key);
@@ -13,12 +13,7 @@ class BottomNavigation2 extends StatefulWidget {
 class _BottomNavigation2State extends State<BottomNavigation2> {
  
   int _currentIndex = 0;
-  
-  List tabs = [
-    HomePage(),
-    StudentSignUp(),
-   ContactUs(),
-  ];
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +40,34 @@ class _BottomNavigation2State extends State<BottomNavigation2> {
           setState(() {
             _currentIndex = index;
           });
+
+          switch (index) {
+      case 0:
+        // Navigate to the Home page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+        break;
+      case 1:
+        // Navigate to the Calendar page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CalenderPage()),
+        );
+        break;
+      case 2:
+        // Navigate to the Contact Us page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ContactUs()),
+        );
+        break;
+    }
         },
       ),
     );
+
+    
   }
 }

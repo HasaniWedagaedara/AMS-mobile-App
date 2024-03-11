@@ -13,7 +13,7 @@ class LoginButton extends StatefulWidget {
 
 class _LoginButtonState extends State<LoginButton> {
   
-  String? _selectedRole; // To store the selected role
+  String? _selectedRole; 
 
   @override
   Widget build(BuildContext context) {
