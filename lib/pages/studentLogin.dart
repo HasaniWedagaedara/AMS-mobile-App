@@ -1,5 +1,5 @@
+import 'package:appointmentms/pages/StudentSignUp1.dart';
 import 'package:appointmentms/pages/StudentpasswordReset1.dart';
-import 'package:appointmentms/pages/studentSignUp.dart';
 import 'package:appointmentms/widgets/appbar2.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
@@ -66,7 +66,7 @@ class _StudentLoginState extends State<StudentLogin> {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => StudentSignUp(),
+                        builder: (context) => StudentSignup1(),
                       ),
                     ),
                     child: const Text(

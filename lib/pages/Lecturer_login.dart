@@ -31,7 +31,8 @@ class _LectureLoginState extends State<LectureLogin> {
             SizedBox(height: 20.0),
             TextBox(labelText: "Password", width: 390, height: 40),
             SizedBox(height: 20.0),
-            Buttons(text: "LOGIN", onPressed: () {  },),
+            Buttons(text: "LOGIN", onPressed: () {  },
+            ),
             
             Row(
                 children: [

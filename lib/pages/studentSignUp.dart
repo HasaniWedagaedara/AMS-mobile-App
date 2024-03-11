@@ -1,4 +1,4 @@
-import 'package:appointmentms/pages/studentverify.dart';
+import 'package:appointmentms/pages/studentLogin.dart';
 import 'package:appointmentms/widgets/appbar2.dart';
 import 'package:appointmentms/widgets/apptext2.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
@@ -49,7 +49,7 @@ class _StudentSignUp extends State<StudentSignUp> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => StudentSignUp3(), // Replace with your actual destination
+                  builder: (context) => StudentLogin(), // Replace with your actual destination
                 ),
               );
              },),
