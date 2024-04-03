@@ -1,4 +1,8 @@
+
+
+import 'package:appointmentms/pages/CalenderViews/DailyView.dart';
 import 'package:appointmentms/pages/homepage.dart';
+import 'package:appointmentms/pages/test.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +14,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime today = DateTime.now();
+   
     return MaterialApp(
       title: 'Blank Flutter App',
       theme: ThemeData(
@@ -17,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home:  HomePage(),
+      home:  DailyView(selectedDate: today),
          );
   }
 }

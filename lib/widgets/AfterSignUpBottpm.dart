@@ -1,16 +1,16 @@
-import 'package:appointmentms/pages/CalenderViews/calenderpage.dart';
+import 'package:appointmentms/pages/Departments/DepartmentView.dart';
+import 'package:appointmentms/pages/Login%20S/LoginHome.dart';
 import 'package:flutter/material.dart';
 import 'package:appointmentms/pages/contactpage.dart';
-import 'package:appointmentms/pages/homepage.dart';
 
-class BottomNavigation2 extends StatefulWidget {
-  const BottomNavigation2({Key? key}) : super(key: key);
+class AfterLoginBottomNavigation extends StatefulWidget {
+  const AfterLoginBottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigation2> createState() => _BottomNavigation2State();
+  State<AfterLoginBottomNavigation> createState() => _AfterLoginBottomNavigationState();
 }
 
-class _BottomNavigation2State extends State<BottomNavigation2> {
+class _AfterLoginBottomNavigationState extends State<AfterLoginBottomNavigation> {
  
   int _currentIndex = 0;
  
@@ -24,16 +24,16 @@ class _BottomNavigation2State extends State<BottomNavigation2> {
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
-            label: 'Disrtricts',
-            icon: Icon(Icons.list_alt_outlined, color: Color(0xFF500512)),
+            label: 'Home',
+            icon: Icon(Icons.home, color: Color(0xFF500512)),
           ),
           BottomNavigationBarItem(
-            label: 'Search',
-            icon: Icon(Icons.search_off_outlined, color: Color(0xFF500512)),
+            label: 'Department',
+            icon: Icon(Icons.school, color: Color(0xFF500512)),
           ),
           BottomNavigationBarItem(
-            label: 'About Us',
-            icon: Icon(Icons.person, color: Color(0xFF500512)),
+            label: 'My appointments',
+            icon: Icon(Icons.list_alt_sharp, color: Color(0xFF500512)),
           ),
         ],
         onTap: (index) {
@@ -46,14 +46,14 @@ class _BottomNavigation2State extends State<BottomNavigation2> {
         // Navigate to the Home page
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => LoginHome()),
         );
         break;
       case 1:
         // Navigate to the Calendar page
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CalenderPage()),
+          MaterialPageRoute(builder: (context) => DepartmentView()),
         );
         break;
       case 2:

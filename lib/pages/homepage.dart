@@ -1,6 +1,6 @@
 // homepage.dart
-import 'package:appointmentms/pages/Lecturer_login.dart';
-import 'package:appointmentms/pages/studentLogin.dart';
+import 'package:appointmentms/pages/Login/Lecturer_login.dart';
+import 'package:appointmentms/pages/Login%20S/studentLogin.dart';
 import 'package:appointmentms/widgets/ButtonText.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +23,9 @@ class _HomePageState extends State<HomePage> {
         preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: const Color(0xFFA1CCEB),
+           leading: Padding(
+            padding: const EdgeInsets.only(left: 4.0,top: 28), 
+          ),
           flexibleSpace: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -56,6 +59,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(top: 35),
         child: Column(
           children: [
+            //SizedBox(height: 0.0),
             AppLargeText(text: "APPOINTMENT MANAGEMENT"),
             AppLargeText(text: "SYSTEM"),
             AppLargeText(text: "FACULTY OF ENGINEERING"),

@@ -1,7 +1,8 @@
+import 'package:appointmentms/widgets/SetPhoto.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+class AfterLoginAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const AfterLoginAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,20 +11,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFA1CCEB),
-        leading: Padding(
+        /*leading: Padding(
           padding: const EdgeInsets.only(top: 28),
           child: IconButton(
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: Icon(Icons.menu,color:Color(0xFF500512)),
+              //icon: Icon(Icons.menu,color:Color(0xFF500512)),
             ),
-        ),
+        ),*/
             
         flexibleSpace: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(width: 10.0),
+            const SizedBox(width: 5.0),
             
             Container(
               padding: const EdgeInsets.only(top: 30, left: 20),
@@ -33,6 +34,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 width: 131.0,
               ),
             ),
+            SizedBox(width: 170,),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: SetPhoto(),
+            ),
+            SizedBox(width: 20,)
             //const SizedBox(width: 210.0), // Add some spacing
           ],
         ),

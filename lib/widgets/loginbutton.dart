@@ -1,5 +1,5 @@
-import 'package:appointmentms/pages/Lecturer_login.dart';
-import 'package:appointmentms/pages/studentLogin.dart';
+import 'package:appointmentms/pages/Login/Lecturer_login.dart';
+import 'package:appointmentms/pages/Login%20S/studentLogin.dart';
 import 'package:appointmentms/widgets/ButtonText.dart';
 import 'package:flutter/material.dart';
 
