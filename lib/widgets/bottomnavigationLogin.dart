@@ -24,15 +24,15 @@ class _BottomNavigation2State extends State<BottomNavigation2> {
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
-            label: 'Disrtricts',
-            icon: Icon(Icons.list_alt_outlined, color: Color(0xFF500512)),
+            label: 'Home',
+            icon: Icon(Icons.home_outlined, color: Color(0xFF500512)),
           ),
           BottomNavigationBarItem(
-            label: 'Search',
-            icon: Icon(Icons.search_off_outlined, color: Color(0xFF500512)),
+            label: 'Calender',
+            icon: Icon(Icons.calendar_today_outlined, color: Color(0xFF500512)),
           ),
           BottomNavigationBarItem(
-            label: 'About Us',
+            label: 'About',
             icon: Icon(Icons.person, color: Color(0xFF500512)),
           ),
         ],

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home:  DailyView(selectedDate: today),
+      home:  DailyView(selectedDate: today)
          );
   }
 }

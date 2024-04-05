@@ -1,3 +1,4 @@
+import 'package:appointmentms/widgets/appBar.dart';
 import 'package:appointmentms/widgets/appbarcommon.dart';
 import 'package:appointmentms/widgets/bottomnavigationLogin.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _ViewsState extends State<Views> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBarcommon(),
+      appBar:  CustomAppBar(),
       body: Column(
         children: [
           Row(
