@@ -1,6 +1,5 @@
 import 'package:appointmentms/widgets/SideBar.dart';
 import 'package:appointmentms/widgets/appBar.dart';
-import 'package:appointmentms/widgets/appbarcommon.dart';
 import 'package:appointmentms/widgets/bottomnavigation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
@@ -153,7 +152,7 @@ class _DailyViewState extends State<DailyView> {
                               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 2),
-                          Text('Date: ${DateFormat('MMM dd, yyyy').format(selectedSlotStartTime!)}'),
+                            Text('Date: ${DateFormat('MMM dd, yyyy').format(selectedSlotStartTime!)}'),
 
                             SizedBox(height: 20),
                             TextFormField(
@@ -166,21 +165,21 @@ class _DailyViewState extends State<DailyView> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    decoration: InputDecoration(labelText: 'From'),
+                                    decoration: const InputDecoration(labelText: 'From'),
                                   ),
                                 ),
-                                SizedBox(width: 10),
+                                const SizedBox(width: 10),
                                 Expanded(
                                   child: TextFormField(
-                                    decoration: InputDecoration(labelText: 'To'),
+                                    decoration: const InputDecoration(labelText: 'To'),
                                   ),
                                 ),
                               ],
                             ),
                             TextFormField(
-                              decoration: InputDecoration(labelText: 'Reason'),
+                              decoration: const InputDecoration(labelText: 'Reason'),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -210,7 +209,7 @@ class _DailyViewState extends State<DailyView> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigation(), 
     );
-    bottomNavigationBar: BottomNavigation();
   }
 }

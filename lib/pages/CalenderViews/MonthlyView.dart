@@ -5,6 +5,7 @@ import 'package:appointmentms/widgets/bottomnavigation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
+
 class MonthlyView extends StatefulWidget {
   const MonthlyView({Key? key}) : super(key: key);
 
@@ -13,13 +14,7 @@ class MonthlyView extends StatefulWidget {
 }
 
 class _MonthlyViewState extends State<MonthlyView> {
-  void _navigateToDailyView(BuildContext context, DateTime selectedDate) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => DailyView(selectedDate: selectedDate),
-      ),
-    );
-  }
+  late DateTime _selectedDate; // Track the selected date
 
   @override
   Widget build(BuildContext context) {
@@ -29,25 +24,37 @@ class _MonthlyViewState extends State<MonthlyView> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          width: double.infinity,
-          height: double.infinity,
           decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Colors.black), // Add border properties as needed
-            borderRadius: BorderRadius.circular(12), // Add border radius as needed
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(12),
           ),
           child: SfCalendar(
-              view: CalendarView.month,
-              initialSelectedDate: DateTime.now(),
-              onTap: (CalendarTapDetails details) {
-                if (details.targetElement == CalendarElement.calendarCell) {
-                  _navigateToDailyView(context, details.date!);
-                }
-              },
-            ),
+            view: CalendarView.month,
+	               allowViewNavigation: true,
+                 timeSlotViewSettings: const TimeSlotViewSettings(
+                  timeInterval: Duration(minutes: 30),
+                  timeIntervalWidth: 60,
+                  timeFormat: 'h:mm a',
+                  timeRulerSize: 80,
+                  timeTextStyle: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                    color: Colors.blue,
+                  ),
+                ),
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigation(),
     );
   }
-} 
+
+  void _navigateToDailyView(BuildContext context, DateTime selectedDate) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => DailyView(selectedDate: selectedDate),
+      ),
+    );
+  }
+}

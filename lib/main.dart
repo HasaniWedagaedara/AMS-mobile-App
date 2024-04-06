@@ -1,6 +1,7 @@
 
 
 import 'package:appointmentms/pages/CalenderViews/DailyView.dart';
+import 'package:appointmentms/pages/CalenderViews/MonthlyView.dart';
 import 'package:appointmentms/pages/homepage.dart';
 import 'package:appointmentms/pages/test.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home:  DailyView(selectedDate: today)
+      home:  MonthlyView(),
          );
   }
 }
